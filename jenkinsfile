@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('stage1') {
-            agent {label 'testmaster'}
+            agent {label 'Master'}
 			steps {
 				parallel (
 					step1:{
@@ -18,7 +18,7 @@ pipeline {
             }
         }
 		stage('stage2') {
-            agent {label 'slave1'}
+            agent {label 'slave-1'}
 			steps {
                 echo 'this is stage 2'
 				sh 'sleep 5'
